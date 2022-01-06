@@ -1,6 +1,7 @@
 import { tw } from 'twind';
 import { useState } from 'react';
 import Button from '@/components/button';
+import Image from 'next/image';
 
 interface IMenuButton {
   toggleMenu: React.MouseEventHandler<HTMLButtonElement>;
@@ -14,34 +15,34 @@ type Link = {
 
 const links = [
   {
-    label: `Features`,
+    label: `了解圣佑`,
     href: `/`,
   },
   {
-    label: `Testimonials`,
+    label: `荣誉资质`,
     href: `/`,
   },
   {
-    label: `Pricing`,
+    label: `管理制度`,
     href: `/`,
   },
   {
-    label: `Blog`,
+    label: `护理知识`,
     href: `/`,
   },
 ];
 
 const secondaryLinks = [
   {
-    label: `Contact sales`,
+    label: `意见反馈`,
+    href: `/ddd`,
+  },
+  {
+    label: `登录`,
     href: `/`,
   },
   {
-    label: `Log in`,
-    href: `/`,
-  },
-  {
-    label: `Get Started`,
+    label: `开始`,
     href: `/`,
   },
 ];
@@ -90,7 +91,7 @@ const MobileMenu = () => (
     <div className={tw(`px-2 pt-2 pb-3 space-y-1 sm:px-3`)}>
       {links.map((link: Link) => (
         <a href={link.href} className={tw(`text-gray-500 block px-3 py-2 text-base font-medium`)} key={link.label}>
-          {link.label}
+          {link.label}热厄尔
         </a>
       ))}
     </div>
@@ -102,7 +103,7 @@ const MobileMenu = () => (
             href={link.href}
             className={tw(`block px-3 py-2 text-base font-medium text-gray-500`)}
           >
-            {link.label}
+            {link.label} 打发打发地方
           </a>
         ))}
       </div>
@@ -113,6 +114,7 @@ const MobileMenu = () => (
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
+  const  logoUrl = "http://ysbbwp.datalibstar.com/wp-content/uploads/2022/01/yslogo.png"
 
   return (
     <nav className={tw(`bg-white`)}>
@@ -120,7 +122,8 @@ const Navigation = () => {
         <div className={tw(`flex items-center justify-between h-24`)}>
           <div className={tw(`flex items-center`)}>
             <div className={tw(`flex-shrink-0`)}>
-              <img className={tw(`h-12 w-12`)} src="logo.svg" alt="logo" width={48} height={48} />
+              <Image src={logoUrl} alt="Dls Logo" width={48} height={48} />
+              {/*} <img className={tw(`h-12 w-12`)} src="image/yslogo.png " alt="logo" width={48} height={48} /> */}
             </div>
             <div className={tw(`hidden md:block`)}>
               <div className={tw(`ml-10 flex items-baseline space-x-4`)}>
@@ -138,9 +141,9 @@ const Navigation = () => {
           </div>
           <div className={tw(`hidden md:block`)}>
             <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              <Button modifier="border-0 mr-2">Contact sales</Button>
-              <Button modifier="border-0 mr-2">Log in</Button>
-              <Button primary>Get started</Button>
+              <Button modifier="border-0 mr-2">意见反馈</Button>
+              <Button modifier="border-0 mr-2">登录</Button>
+              <Button primary>快捷引导</Button>
             </div>
           </div>
           <div className={tw(`-mr-2 flex md:hidden`)}>
