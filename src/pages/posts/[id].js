@@ -1,15 +1,12 @@
 import { getSinglePost, getCategories,  getPostsByCategoryId } from "../../lib/api";
 import Head from "next/head";
-import styles from '../../styles/Home.module.css';
 import * as React from 'react'; 
 import Grid from '@mui/material/Grid';
 import Container from '@material-ui/core/Container'
-import Header from "../../components/header"
 import { Divider } from '@mui/material';
 import Main  from "../../components/MainContent.js" 
 import Link from '@material-ui/core/Link'  
 import Image from 'next/image'  
-import Footer from "../../components/footer.js" 
 
 
 export default function Post({ post, cats }) {   
@@ -31,7 +28,7 @@ export default function Post({ post, cats }) {
                         <br/><br/><br/><br/>{ catName }                          
 
                        {posts.map((item,index) => (
-                            <div key={index}  className={styles.sidebarPost}>
+                            <div key={index}   >
                                   <Link href={`/posts/${item.node.id}`}>
                                       <a style={{color:'blue'}}>{item.node.title}</a>
                                   </Link> 
@@ -41,7 +38,7 @@ export default function Post({ post, cats }) {
                                               
                     </Grid>  
                 </Grid> 
-                <Footer />
+                
             </Container> 
         </> 
     )
