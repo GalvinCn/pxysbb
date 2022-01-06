@@ -91,7 +91,7 @@ const MobileMenu = () => (
     <div className={tw(`px-2 pt-2 pb-3 space-y-1 sm:px-3`)}>
       {links.map((link: Link) => (
         <a href={link.href} className={tw(`text-gray-500 block px-3 py-2 text-base font-medium`)} key={link.label}>
-          {link.label}热厄尔
+          {link.label} 
         </a>
       ))}
     </div>
@@ -103,7 +103,7 @@ const MobileMenu = () => (
             href={link.href}
             className={tw(`block px-3 py-2 text-base font-medium text-gray-500`)}
           >
-            {link.label} 打发打发地方
+            {link.label}  
           </a>
         ))}
       </div>
