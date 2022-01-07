@@ -44,7 +44,7 @@ async function fetchAPI(query, { variables } = {}) {
                     node{
                     name
                     }
-                }
+                  }
                 }
                 excerpt
                 slug
@@ -66,6 +66,27 @@ async function fetchAPI(query, { variables } = {}) {
       );
     return data?.posts?.edges;
 }
+
+
+export async function getPostsByCategoryName(name){
+  //  console.log('获取目录内容', id);
+   const data = await fetchAPI(
+     `query PostsByCat{
+        posts(where: {categoryName: "${name}"}) {
+          edges {
+            node {
+              slug
+              content
+              title
+              link
+            }
+          }
+        }
+     }
+   `,{name});
+   return data?.posts?.edges;
+ } 
+
 
 export async function getPostsByCategoryId(id){
   //  console.log('获取目录内容', id);
@@ -138,14 +159,36 @@ export async function getPageByName(name){
             link
             pageId
             slug
+
           }
         }
       }
     } 
-   `,{name});
- 
+   `,{name}); 
    return data?.pages.edges;
  } 
+ 
+ export async function getPageByTitle(title){
+  //  console.log('获取目录内容', id);
+   const data = await fetchAPI(
+     `query MyQuery {
+        pages(where: {title: "${title}"}) {
+          edges {
+            node {
+              content
+              id
+              link
+              pageId
+              slug
+              title
+            }
+          }
+        }
+    } 
+   `,{title}); 
+   return data?.pages.edges;
+ } 
+
 
 export async function getSingleCategory(id){
  //  console.log('获取目录内容', id);

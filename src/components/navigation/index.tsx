@@ -15,20 +15,20 @@ type Link = {
 
 const links = [
   {
-    label: `了解圣佑`,
-    href: `/`,
+    label: `了解佑圣`,
+    href: `/pages/了解佑圣`,
   },
   {
     label: `荣誉资质`,
-    href: `/`,
+    href: `/pages/荣誉资质`,
   },
   {
     label: `管理制度`,
-    href: `/`,
+    href: `/categories/管理制度`,
   },
   {
     label: `护理知识`,
-    href: `/`,
+    href: `/categories/护理知识`,
   },
 ];
 
