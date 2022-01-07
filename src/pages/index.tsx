@@ -1,3 +1,4 @@
+import React, { FC } from "react";
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
 import { getPosts, getCategories, getPostsByCategoryId} from "../lib/api"
@@ -13,8 +14,11 @@ import Footer from '@/components/footer';
 import Link from '@mui/material/Link';
 import MainHome from "../components/MainHome.js"
 
-const Home = (posts, cats) => {
+ 
+
+ 
  // export default function Home() {
+  export default function Home( ) {  
   return (
     <Page>
       <NextSeo
@@ -23,7 +27,7 @@ const Home = (posts, cats) => {
       />
       {/* <Header />  */}
       <main>
-        <MainHome title="共建美好数字新世界" posts={posts}  type="home"/>
+        {/*} <MainHome title="共建美好数字新世界" posts={posts}  type="home"/>   */}
         <VideoSection />
         <ListSection />
         <FeatureSection />
@@ -35,20 +39,18 @@ const Home = (posts, cats) => {
     </Page>
   );
 }
-
-export default Home
  
  
-export async function getServerSideProps(ctx) {
+ /*
+export async function getServerSideProps() {
   // let posts = await getPosts();
    let id = 'dGVybToz'
-   let cats = await getCategories();
+  // let cats = await getCategories();
    let posts = await getPostsByCategoryId(id);
    return {
      props: {
-       posts,
-       cats
+       posts 
      }
    }
  }
-  
+  */
